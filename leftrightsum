@@ -1,0 +1,48 @@
+
+
+public class Main
+{
+    public static String printGreater(int num){
+        String snum=""+num;
+        int len=snum.length();
+        int leftsum=0;
+        int rightsum=0;
+        double mid=Math.floor(len/2);
+        
+        
+        for(int i=0;i<len;i++){
+            //when length of the numbe is even 
+            if(len%2 ==0){
+           if(i<mid){
+               leftsum+=Character.getNumericValue(snum.charAt(i));
+           } 
+           else if(i>=mid){
+               rightsum+=Character.getNumericValue(snum.charAt(i));
+           }}
+           //when length of the numbe is odd 
+            else if(len%2 !=0){
+             if(i<mid){
+               leftsum+=Character.getNumericValue(snum.charAt(i));
+           } 
+           else if(i>mid){
+               rightsum+=Character.getNumericValue(snum.charAt(i));
+           }
+        }
+ 
+        }
+        if(leftsum>rightsum){
+               return "Left side sum is greater";
+           }
+           else if(rightsum>leftsum){
+               return "Right side sum is greater";
+           }
+          
+     return "Both left and right side sum is equal !";
+    } 
+	public static void main(String[] args) {
+	    
+	   
+		System.out.println(printGreater(1234567));
+	
+	}
+}
